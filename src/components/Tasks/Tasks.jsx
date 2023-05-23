@@ -4,6 +4,7 @@ import styles from "./tasks.module.css";
 import Swal from "sweetalert2";
 
 export const Tasks = ({ tasks, taskCompletedById, deleteTasksById }) => {
+  console.log(tasks);
   const tasksQuantity = tasks.length;
   const completedTasks = tasks.filter((task) => task.isCompleted).length;
 
@@ -35,7 +36,9 @@ export const Tasks = ({ tasks, taskCompletedById, deleteTasksById }) => {
         </div>
       </header>
       <div className={styles.list}>
-        {tasks.map((task) => (
+        {
+        tasks.length === 0 ? <p className={styles.add}>Add Tasks</p> :
+        tasks.map((task) => (
           <Task
             key={task.id}
             task={task}

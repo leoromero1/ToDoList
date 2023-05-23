@@ -13,7 +13,10 @@ export const Task = ({ task, taskCompletedById, deleteTasksById }) => {
       <p className={task?.isCompleted ? styles.texCompleted : ""}>
         {task?.title}
       </p>
-      <button className={styles.deleteButton} onClick={()=> deleteTasksById(task?.id)}>
+      <button
+        className={styles.deleteButton}
+        onClick={() => deleteTasksById(task?.id)}
+      >
         <TbTrash size={28} />
       </button>
     </div>
